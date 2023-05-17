@@ -11,7 +11,7 @@ const pool = new Pool({
 
 exports.getUsers = (req, res, next) => {
 
-    const getString = 'SELECT * FROM users ORDER BY id DESC';
+    /*const getString = 'SELECT * FROM users ORDER BY id DESC';
     pool.query(getString)
         .then(results => {
             let users = results.rows;
@@ -20,8 +20,8 @@ exports.getUsers = (req, res, next) => {
         .catch(err => { return res.status(400).send({
             message: err
          })});
-
-    /*res.status(200).json({
+*/
+    res.status(200).json({
         users: [
             {
                 first_name: 'Ella',
@@ -36,7 +36,7 @@ exports.getUsers = (req, res, next) => {
                 grade: '5'
             }
         ]
-    });*/
+    });
 };
 
 exports.createUser = (req, res, next) => {
